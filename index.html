@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Quizader Mindbend</title>
+        <style>
+            * {
+                margin: 0;
+                color: rgb(25, 25, 25);
+                font-family: 'Trebuchet MS';
+            }
+            div {
+                margin: 15px;
+            }
+            .border {
+                border: 0.5px solid rgba(25, 25, 25, 0.5);
+            }
+
+            /* Layout */
+            .layout {
+                margin: 40px auto;
+                padding: 15px;
+                width: fit-content;
+                border-radius: 2.5%;
+                box-shadow: 6px 6px 3px 2.5px rgba(25, 25, 25, 0.25);
+            }
+            .quiz-title {
+                padding: 20px;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bolder;
+                border-radius: 2.5%;
+                font-family: 'Trebuchet MS';
+                box-shadow: 6px 6px 3px 2.5px rgba(25, 25, 25, 0.25);
+            }
+            .quiz{
+                height: auto;
+            }
+            .top-side {
+                overflow-y: scroll;
+                margin: 0;
+                height: 250px;
+                margin-bottom: 15px;
+                border-radius: 2.5%;
+                box-shadow: 6px 6px 3px 2.5px rgba(25, 25, 25, 0.25);
+            }
+            .bottom-side {
+                display: flex;
+                margin: 0;
+                margin-top: 15px;
+                justify-content: space-between;
+            }
+            .quiz-endline {
+                padding: 10px;
+                font-size: 20px;
+                font-style: italic;
+                text-align: center;
+                font-weight: bolder;
+                border-radius: 2.5%;
+                box-shadow: 6px 6px 3px 2.5px rgba(25, 25, 25, 0.25);
+            }
+
+            /* Quiz Stats */
+            #q-attended, #q-timer, #q-submit {
+                width: 125px;
+                height: 125px;
+                padding: 15px;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                border-radius: 2.5%;
+                justify-content: center;
+                box-shadow: 6px 6px 3px 2.5px rgba(25, 25, 25, 0.25);
+            }
+            #time-value, #score-value {
+                font-size: 60px;
+                font-weight: 800;
+            }
+            #q-submit {
+                cursor: pointer;
+            }
+            #q-submit:hover {
+                background-color: rgba(25, 25, 25, 0.15);
+            }
+
+            /* Questions */
+            .q-set {
+                width: auto;
+                margin: 5px;
+                height: 240px;
+            }
+            .q-stmt {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .q-options {
+                font-size: 20px;
+                margin-left: 12.5%;
+            }
+            .q-options > input {
+                transform: scale(1.75);
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="layout border">
+            <div class="quiz-title border">&nbsp; Computer Science Quiz &nbsp;</div>
+            <div class="quiz">
+                <div class="top-side border">
+                    <!-- Question 1 -->
+                    <div class="q-set" id="Q1">
+                        <div class="q-stmt">
+                            <strong> 1 ) </strong> &nbsp;
+                            <em> Which one of the following runs the fastest? </em>
+                        </div>
+                        <div class="q-options">
+                            <input type="radio" name="A1" id="A1" value="1">&nbsp;&nbsp; C++ <br/><br/>
+                            <input type="radio" name="A1" id="A1" value="2">&nbsp;&nbsp; C <br/><br/>
+                            <input type="radio" name="A1" id="A1" value="3">&nbsp;&nbsp; Java <br/><br/>
+                            <input type="radio" name="A1" id="A1" value="4">&nbsp;&nbsp; Python <br/><br/>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="q-set" id="Q2">
+                        <div class="q-stmt">
+                            <strong> 2 ) </strong> &nbsp;
+                            <em> What is the popular web development stack in the market? </em>
+                        </div>
+                        <div class="q-options">
+                            <input type="radio" name="A2" id="A2" value="1">&nbsp;&nbsp; LAMP <br/><br/>
+                            <input type="radio" name="A2" id="A2" value="2">&nbsp;&nbsp; MERN <br/><br/>
+                            <input type="radio" name="A2" id="A2" value="3">&nbsp;&nbsp; Laravel <br/><br/>
+                            <input type="radio" name="A2" id="A2" value="4">&nbsp;&nbsp; Django <br/><br/>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="q-set" id="Q3">
+                        <div class="q-stmt">
+                            <strong> 3 ) </strong> &nbsp;
+                            <em> Which out of these languages is programmer friendly? </em>
+                        </div>
+                        <div class="q-options">
+                            <input type="radio" name="A3" id="A3" value="1">&nbsp;&nbsp; Kotlin <br/><br/>
+                            <input type="radio" name="A3" id="A3" value="2">&nbsp;&nbsp; TypeScript <br/><br/>
+                            <input type="radio" name="A3" id="A3" value="3">&nbsp;&nbsp; Python <br/><br/>
+                            <input type="radio" name="A3" id="A3" value="4">&nbsp;&nbsp; Scala <br/><br/>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="q-set" id="Q4">
+                        <div class="q-stmt">
+                            <strong> 4 ) </strong> &nbsp;
+                            <em> Which JVM tool makes Java platform-independent? </em>
+                        </div>
+                        <div class="q-options">
+                            <input type="radio" name="A4" id="A4" value="1">&nbsp;&nbsp; JDK <br/><br/>
+                            <input type="radio" name="A4" id="A4" value="2">&nbsp;&nbsp; JRE <br/><br/>
+                            <input type="radio" name="A4" id="A4" value="3">&nbsp;&nbsp; JIT <br/><br/>
+                            <input type="radio" name="A4" id="A4" value="4">&nbsp;&nbsp; None of these <br/><br/>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="q-set" id="Q5">
+                        <div class="q-stmt">
+                            <strong> 5 ) </strong> &nbsp;
+                            <em> What storage format does MongoDB utilise? </em>
+                        </div>
+                        <div class="q-options">
+                            <input type="radio" name="A5" id="A5" value="1">&nbsp;&nbsp; XML <br/><br/>
+                            <input type="radio" name="A5" id="A5" value="2">&nbsp;&nbsp; Relational Data <br/><br/>
+                            <input type="radio" name="A5" id="A5" value="3">&nbsp;&nbsp; JSON <br/><br/>
+                            <input type="radio" name="A5" id="A5" value="4">&nbsp;&nbsp; Plain Text <br/><br/>
+                        </div>
+                    </div>
+
+                    <div class="q-set" id="None" style="display: none">
+                        <strong><em>
+                            <h3 style="text-align: center; padding-top: 105px;">--- Your Quiz is Over ---</h3>
+                        </strong></em>
+                    </div>
+                </div>
+                <div class="bottom-side">
+                    <div id="q-timer" class="border">
+                        <div class="pack-element">
+                            <span id="time-value"> 100 </span>
+                            <h2>SECONDS</h2>
+                        </div>
+                    </div>
+                    <div id="q-attended" class="border">
+                        <div class="pack-element">
+                            <h1>GOOD</h1>
+                            <h1>LUCK</h1>
+                        </div>
+                    </div>
+                    <div id="q-submit" class="border" onclick="terminateQuiz()">
+                        <div class="pack-element">
+                            <span id="score-value"></span>
+                            <h2 id="score-card">SUBMIT</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz-endline border">&nbsp; Thanks for participating &nbsp;</div>
+        </div>
+        <script>
+            let status = 1, score = 0, answers = [ 1, 2, 3, 2, 3 ];
+            let timer = setInterval( function() {
+                let time = document.getElementById('time-value');
+                time.innerHTML = parseInt(time.innerHTML) - 1;
+                if(time.innerHTML == 0)  terminateQuiz();
+            }, 1000 );
+            function terminateQuiz() {
+                if(status == 1) {   
+                    status = 0;
+                    clearInterval(timer);
+                    for(let i = 0; i < answers.length; i++) {
+                        if( document.getElementsByName('A' + (i+1))[answers[i]-1].checked ) ++score;
+                        document.getElementById('Q' + (i+1)).style.display = 'none';
+                    }
+                    document.getElementById('q-attended').style.backgroundColor = 'rgba(25, 25, 25, 0.15)';
+                    document.getElementById('q-submit').style.backgroundColor = 'rgba(25, 25, 25, 0.15)';
+                    document.getElementById('q-timer').style.backgroundColor = 'rgba(25, 25, 25, 0.15)';
+                    document.getElementById('None').style.backgroundColor = 'rgba(25, 25, 25, 0.15)';
+                    document.getElementById('score-value').innerHTML = score + '/5';
+                    document.getElementById('score-card').innerHTML = 'SCORE';
+                    document.getElementById('None').style.display = 'block';
+                }
+            }
+        </script>
+    </body>
+</html>
